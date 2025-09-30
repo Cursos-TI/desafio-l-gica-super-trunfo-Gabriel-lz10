@@ -2,10 +2,8 @@
 
 
 int main() {
-#include <stdio.h>
 
 
-int main() { 
     
 // nessa primeira parte defini as variáveis e os tipos de dados.
 // coloquei os números 1 e 2 para diferencias as cidades, assim dando mais clareza de qual cidade estou programando.
@@ -72,7 +70,7 @@ printf("Digite o código da carta: ");
 scanf("%s", codigo2);
 
 printf ("Digite o nome da cidade: ");
-scanf("%s", cidade2);
+scanf(" %s", cidade2);
 
 printf("Digite a população da cidade: ");
 scanf ("%lu", &populacao2);
@@ -104,10 +102,11 @@ printf("PIB PER CAPITA: %.2F\n", capita2);
 
 
 // nessa parte do código eu faço as comparações
+printf("Comparação de Cartas:\n");
  
 printf("Atributo: População\n");
-if (populacao1 > populacao2){
-    printf ("Carta 1 (%s) venceu.\n", cidade1);
+if(populacao1 > populacao2){
+    printf("Carta 1 (%s) venceu.\n", cidade1);
 } else {
     printf("Carta 2 (%s) venceu.\n", cidade2);
 }
@@ -132,13 +131,15 @@ if (turísticos1 > turísticos2){
 } else {
 printf ("Carta 2 (%s) venceu.\n", cidade2);
 } 
-printf("Atributo: Densidade Populacional");
+
+printf("Atributo: Densidade Populacional\n");
 if (densi1 < densi2){
    printf ("Carta 1 (%s) venceu.\n", cidade1); 
 } else {
 printf ("Carta 2 (%s) venceu.\n", cidade2);
 }
-printf("Atributo: PIB per capita");
+
+printf("Atributo: PIB per capita\n");
 if (capita1 > capita2){
      printf ("Carta 1 (%s) venceu.\n", cidade1);
 } else {
@@ -164,5 +165,3 @@ printf ("Carta 2 (%s) venceu.\n", cidade2);
 
 
 
-    return 0;
-}
