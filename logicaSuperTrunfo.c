@@ -257,7 +257,7 @@ printf("Opção inválida, tente novamente.\n");
 if (resultado1 && resultado2){
     printf("A cidade %s venceu a comparação de atributos de forma individual!!\n", cidade1);
 } else if (resultado1 != resultado2 ) {
-    printf ("A comparação individual dos atributos empatou!!\n");
+    printf ("A comparação individual dos atributos empatou!!\n"); // problema que descrevi no comentário.
 } else {
     printf("A cidade %s venceu a comparação de atributos de forma individual!!\n", cidade2);
 }
