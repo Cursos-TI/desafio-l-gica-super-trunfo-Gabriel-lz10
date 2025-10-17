@@ -15,10 +15,15 @@ float densi1, densi2, capita1, capita2;
 unsigned long int populacao1, populacao2;
 int comparacao1, comparacao2;
 int resultado1, resultado2;
+unsigned int soma1, soma2;
+int carta1_v1, carta1_v2;
+int carta2_v1, carta2_v2;
+
 
 
 // comecei solicitando a entrada dos dados da primeira cidade.
 
+printf("Carta 1\n");
 
 printf("Digite uma letra de 'A' a 'H': ");
 scanf(" %c", &estado1);
@@ -64,7 +69,7 @@ printf("PIB PER CAPITA: %.2F\n", capita1),
 
 
 // e aqui eu repeti o mesmo processo que fiz na primeira cidade.
-
+printf("Carta 2\n");
 printf("Digite uma letra de 'A' a 'H': ");
 scanf(" %c", &estado2);
 
@@ -114,7 +119,7 @@ printf("6. PIB per capita\n");
 printf("Escolha: ");
 scanf("%d", &comparacao1);
 
-// adicionei o switch e dentro de cada case eu usei o if-else e também o else-if
+// adicionei o switch
 switch (comparacao1)
 {
 case 1:
@@ -122,6 +127,8 @@ printf("Você escolheu comparar população\n");
 resultado1 = populacao1 > populacao2 ? 1 : 0;
 printf("A população da cidade %s é %lu\n", cidade1, populacao1);
 printf("A população da cidade %s é %lu\n", cidade2, populacao2);
+carta1_v1 = populacao1;
+carta2_v1 = populacao2;
     break;
 
 case 2:
@@ -129,6 +136,8 @@ printf("Você escolheu comparar área\n");
 resultado1 = area1 > area2 ? 1 : 0;
 printf("A área da cidade %s é %.2f\n", cidade1, area1);
 printf("A área da cidade %s é %.2f\n", cidade2, area2);    
+carta1_v1 = area1;
+carta2_v1 = area2;
     break;
 
 case 3:
@@ -136,6 +145,8 @@ printf("Você escolheu comparar PIB\n");
 resultado1 = pib1 > pib2 ? 1 : 0;
 printf("O PIB da cidade %s é %.2f\n", cidade1, pib1);
 printf("O PIB da cidade %s é %.2f\n", cidade2, pib2);
+carta1_v1 = pib1;
+carta2_v1 = pib2;
     break;
 
 case 4:
@@ -143,6 +154,8 @@ printf("Você escolheu comparar pontos turísticos\n");
 resultado1 = turísticos1 > turísticos2 ? 1 : 0;
 printf("O número de pontos turísticos da cidade %s é %d\n", cidade1, turísticos1);
 printf("O número de pontos turísticos da cidade %s é %d\n", cidade2, turísticos2);
+carta1_v1 = turísticos1;
+carta2_v1 = turísticos2;
     break;
 
 case 5:
@@ -150,18 +163,22 @@ printf("Você escolheu comparar densidade demográfica\n");
 resultado1 = densi1 < densi2 ? 1 : 0;
 printf("A densidade demográfica da cidade %s é %.2f\n", cidade1, densi1);
 printf("A densidade demográfica da cidade %s é %.2f\n", cidade2, densi2);
+carta1_v1 = densi1;
+carta2_v1 = densi2;
     break;
 case 6:
 printf("Você escolheu comparar o PIB per capita\n");
 resultado1 = capita1 > capita2 ? 1 : 0;
 printf("O PIB per capita da cidade %s é %.2f\n", cidade1, capita1);
 printf("O PIB per capita da cidade %s é %.2f\n", cidade2, capita2);
+carta1_v1 = capita1;
+carta2_v1 = capita2;
 break;
 default:
 printf("Opção inválida, tente novamente.\n");
     break;
 }
-
+ // criei o segundo menu interativo.
 printf("Qual o segundo atributo que você deseja comparar:\n");
 printf("ATENÇÃO: cuidado para não escolher o mesmo atributo!\n");
 printf("1. População\n");
@@ -173,8 +190,8 @@ printf("6. PIB per capita\n");
 printf("Escolha: ");
 scanf("%d", &comparacao2);
 
-if(comparacao1 == comparacao2){
-    printf("Você escolheu o mesmo atributo!\n");
+if(comparacao1 == comparacao2){ 
+    printf("Você escolheu o mesmo atributo!\n"); // caso escolha o mesmo atributo que escolheu no primeiro switch, o programa vai exibir essa mensagem e encerrar.
 }else{
 switch (comparacao2)
 {
@@ -183,6 +200,8 @@ printf("Você escolheu comparar população\n");
 resultado2 = populacao1 > populacao2 ? 1 : 0;
 printf("A população da cidade %s é %lu\n", cidade1, populacao1);
 printf("A população da cidade %s é %lu\n", cidade2, populacao2);
+carta1_v2 = populacao1;
+carta2_v2 = populacao2;
     break;
 
 case 2:
@@ -190,6 +209,8 @@ printf("Você escolheu comparar área\n");
 resultado2 = area1 > area2 ? 1 : 0;
 printf("A área da cidade %s é %.2f\n", cidade1, area1);
 printf("A área da cidade %s é %.2f\n", cidade2, area2); 
+carta1_v2 = area1;
+carta2_v2 = area2;
     break;
 
 case 3:
@@ -197,6 +218,8 @@ printf("Você escolheu comparar PIB\n");
 resultado2 = pib1 > pib2 ? 1 : 0;
 printf("O PIB da cidade %s é %.2f\n", cidade1, pib1);
 printf("O PIB da cidade %s é %.2f\n", cidade2, pib2);
+carta1_v2 = pib1;
+carta2_v2 = pib2;
     break;
 
 case 4:
@@ -204,6 +227,8 @@ printf("Você escolheu comparar pontos turísticos\n");
 resultado2 = turísticos1 > turísticos2 ? 1 : 0;
 printf("O número de pontos turísticos da cidade %s é %d\n", cidade1, turísticos1);
 printf("O número de pontos turísticos da cidade %s é %d\n", cidade2, turísticos2);
+carta1_v2 = turísticos1;
+carta2_v2 = turísticos2;
     break;
 
 case 5:
@@ -211,6 +236,8 @@ printf("Você escolheu comparar densidade demográfica\n");
  resultado2 = densi1 < densi2 ? 1 : 0;
 printf("A densidade demográfica da cidade %s é %.2f\n", cidade1, densi1);
 printf("A densidade demográfica da cidade %s é %.2f\n", cidade2, densi2);
+carta1_v2 = turísticos1;
+carta2_v2 = turísticos2;
     break;
 
 case 6:
@@ -218,6 +245,8 @@ printf("Você escolheu comparar o PIB per capita\n");
 resultado2 = capita1 > capita2 ? 1 : 0;
 printf("O PIB per capita da cidade %s é %.2f\n", cidade1, capita1);
 printf("O PIB per capita da cidade %s é %.2f\n", cidade2, capita2);
+carta1_v2 = capita1;
+carta2_v2 = capita2;
 break;
 
 default:
@@ -226,13 +255,34 @@ printf("Opção inválida, tente novamente.\n");
 }
 
 if (resultado1 && resultado2){
-    printf("A cidade %s venceu!!\n", cidade1);
-} else if (resultado1 != resultado2){
-    printf("empate!!\n");
+    printf("A cidade %s venceu a comparação de atributos de forma individual!!\n", cidade1);
+} else if (resultado1 != resultado2 ) {
+    printf ("A comparação individual dos atributos empatou!!\n");
 } else {
-    printf("A cidade %s venceu!!\n",cidade2);
+    printf("A cidade %s venceu a comparação de atributos de forma individual!!\n", cidade2);
 }
+
+
+soma1 = carta1_v1 + carta1_v2;
+soma2 = carta2_v1 + carta2_v2;
+
+printf("*** Agora vai ser feito a soma dos atributos ***\n");
+printf("O valor do primeiro atributo de comparação da carta 1 foi %d + %d o valor do segundo atributo que somando resultou no valor de: %u\n",
+    carta1_v1, carta1_v2, soma1);
+printf("O valor do primeiro atributo de comparação da carta 2 foi %d + %d o valor do segundo atributo que somando resultou no valor de: %u\n",
+    carta2_v1, carta2_v2, soma2);
+
+if(soma1 > soma2){
+    printf("A soma da carta 1: %s é maior que a soma da carta 2: %s, portanto a carta 1 venceu!!\n", cidade1, cidade2);
+} else if( soma1 < soma2) {
+    printf("A soma da carta 2: %s é maior que a soma da carta 1: %s, portanto a carta 2 venceu!!\n", cidade2, cidade1);
+} else {
+    printf(" a soma da carta 1 e da carta 2 deu empate!\n");
 }
+
+
+}
+ 
 
  
 
